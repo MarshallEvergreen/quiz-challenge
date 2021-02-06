@@ -45,7 +45,7 @@ Nice to have features that will have a small impact if left out.
 
 * The mean score for a particular quiz for a particular user can be retrieved (to within the same 10% increment)
     (ie if a user scored 57% I would expect to see something like 36% of people completing this quiz also scored between 50 and 60%)
-  * The logic for this will most likely be handled by the backend so it would be could to start thinking about how to 
+  * The logic for this will most likely be handled by the backend so it would be good to start thinking about how to 
     implement this.
 
 ### Won't Have
@@ -56,6 +56,6 @@ Features that are not a priority for this specific time frame but could be added
     but that an administrator should be able to edit quizzes.
   * This is not crucial to the functionality of the software and needs little bit more clarification.
     
-* Everything to do with the administration area should would need more discussion such as: 
+* Everything to do with the administration area would need more discussion such as: 
   * Should the backend or front end hand the logic around this area? 
   * Not crucial to getting the workflow correct.
