@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package quiz_engine_package;
+
+// The quiz engine service definition.
+service QuizEngineService {
+  rpc AddQuiz (AddQuizRequest) returns (AddQuizReply) {}
+  rpc AddUser (AddUserRequest) returns (AddUserReply) {}
+  rpc AvailableQuizzesForUser (AvailableQuizzesRequest) returns (AvailableQuizzesReply) {}
+  rpc SubmitQuizAnswers (SubmitQuizAnswersRequest) returns (SubmitQuizAnswersReply) {}
+  rpc GetQuizResultsForUser (GetQuizResultsForUserRequest) returns (GetQuizResultsForUserReply) {}
+}
+
+// The request message containing the quiz information.
+message AddQuizRequest {
+  Quiz quiz = 1;
+}
+// The response message acknowledging the quiz was added
+message AddQuizReply {}
+
+// The request message to generate a new user.
+message AddUserRequest {
+  string email = 1;
+}
+// The response message acknowledging the user was created
+message AddUserReply {}
+
+// The request message to return quizzes available for user.
+message AvailableQuizzesRequest {
+  string email = 1;
+}
+
+// The response message the available quizzes
+message AvailableQuizzesReply {
+  repeated UUID quiz_uuids = 1;
+}
+
+// The request message to submit quiz answers.
+message SubmitQuizAnswersRequest {
+  string email = 1;
+  CompletedQuiz completed_quiz = 2;
+}
+
+// The response message to acknowledge quiz answers submitted
+message SubmitQuizAnswersReply {}
+
+// The request message to submit quiz answers.
+message GetQuizResultsForUserRequest {
+  string email = 1;
+}
+
+// The response message to acknowledge quiz answers submitted
+message GetQuizResultsForUserReply {
+  repeated CompletedQuiz completed_quizzes = 1;
+}
+
+// Generic uuid
+message UUID {
+  string value = 1;
+}
+
+// Multiple choice question
+message MultipleChoiceQuestion {
+  string question = 1;
+  repeated string options = 2;
+  string correct_answer = 3;
+}
+
+// User submitted answers
+message SubmittedAnswer {
+  MultipleChoiceQuestion question = 1;
+  string answer = 2;
+}
+
+// The quiz information
+message Quiz {
+  UUID uuid = 1;
+  repeated MultipleChoiceQuestion questions = 2;
+}
+
+// A quiz completed by the user
+message CompletedQuiz {
+  UUID uuid = 1;
+  repeated SubmittedAnswer submitted_answers = 2;
+  uint32 correct_answers = 3;
+}
+
+// Information about the user and the quizzes they have completed
+message User {
+  string email = 1;
+  repeated UUID completed_quiz_uuids = 2;
+  repeated CompletedQuiz completed_quizzes = 3;
+}
