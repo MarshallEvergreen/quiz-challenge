@@ -7,7 +7,7 @@ This makes components exchangeable at any level and facilitates unit and integra
 
 ![Alt text](./QuizEngineArchitecture.svg)
 
-In summary, the plan would be to develop the quiz engine logic which sits on top of a database solution 
+In summary, the plan would be to develop the quiz engine logic (Business Logic) which sits on top of a database solution (Service Database) 
 which can be easily swapped out. This would allow development of the core functionality and unit test it against a 
 simple mock database. Once a production solution has been decided this connection can be tested with a simple set of
 integration tests.
