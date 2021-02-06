@@ -2,6 +2,8 @@
 A gPRC service is hosted by a server on port 30051 and allows the outside world to communicate with the QuizEngineCore.
 
 The server can be manually hit using [BloomRPC](https://github.com/uw-labs/bloomrpc) to prove the functionality is working.
+See Example below.. 
+![alt text](https://github.com/MarshallEvergreen/quiz-challenge/blob/master/Planning/bloomRPCExample.png)
 A small suite integration tests could be written to prove the communication is working.
 
 Ideally this should be dockerised build which exposes this port from the container.
