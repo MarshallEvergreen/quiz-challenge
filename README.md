@@ -1,5 +1,8 @@
-# quiz-challenge
+# quiz-engine-challenge
+This a technical challenge for an interview designed to demonstrate my ability to understand a task that has been set and evaluate 
+how I design a solution and go about implementing that solution. 
 
+No more than 2 or 3 hours should be spent on the solution. 
 ## Summary
 A popular TV show has asked us to build a website that will allow them to publish quizzes. 
 
